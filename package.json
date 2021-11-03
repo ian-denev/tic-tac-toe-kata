@@ -1,0 +1,22 @@
+{
+  "name": "tic-tac-toe-kata",
+  "version": "1.0.0",
+  "description": "A solution for the Tic Tac Toe Kata",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ian-denev/tic-tac-toe-kata.git"
+  },
+  "author": "Ian Denev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ian-denev/tic-tac-toe-kata/issues"
+  },
+  "homepage": "https://github.com/ian-denev/tic-tac-toe-kata#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}

@@ -1,0 +1,1 @@
+const { solveTicTacToe } = require("./index");
