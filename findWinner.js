@@ -5,7 +5,7 @@
  *  ["X", null, "O"],
  *  ["X", null, "O"]
  * ]
- * The function should return "X" if player X has won, "0" if the player 0 has won, and null if there is currently no winner.
+ * The function should return "X" if player X has won, "O" if the player O has won, and null if there is currently no winner.
  * @param {Array} board
  */
 const findWinner = board => {
