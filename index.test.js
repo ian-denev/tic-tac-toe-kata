@@ -43,4 +43,9 @@ describe("solveTicTacToe testing suite", () => {
         const nonAlternatingGameSeq = [["X", 1, 1], ["X", 0, 0]];
         expect(() => solveTicTacToe(nonAlternatingGameSeq)).toThrow("players must alternate");
     });
+
+    test("position already occupied", () => {
+        const repeatingPositionGameSeq = [["X", 1, 1], ["O", 1, 0], ["X", 1, 1]];
+        expect(() => solveTicTacToe(repeatingPositionGameSeq)).toThrow("position already occupied");
+    });
 })
