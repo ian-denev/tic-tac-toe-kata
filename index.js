@@ -1,5 +1,11 @@
 const { findWinner } = require("./findWinner");
 
+/**
+ * This function accepts a game sequence array where each element represents one placement of an X or O on a Tic Tac Toe board. 
+ * 
+ * The function should return "X" if player X has won, "O" if the player O has won, and null if there is currently no winner.
+ * @param {Array} gameSequence
+ */
 const solveTicTacToe = (gameSequence) => {
     if (gameSequence === undefined) throw new Error("an argument is required");
     else if (!Array.isArray(gameSequence)) throw new Error("gameSequence must be an Array");
