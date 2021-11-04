@@ -50,4 +50,52 @@ describe("solveTicTacToe gameplay testing suite", () => {
         const repeatingPositionGameSeq = [["X", 1, 1], ["O", 1, 0], ["X", 1, 1]];
         expect(() => solveTicTacToe(repeatingPositionGameSeq)).toThrow("position already occupied");
     });
+
+    test("correct winner - row", () => {
+        const gameSequence = [
+            ["O", 0, 1],
+            ["X", 2, 2],
+            ["O", 0, 2],
+            ["X", 2, 1],
+            ["O", 0, 0]
+        ];
+        expect(solveTicTacToe(gameSequence)).toBe("O");
+    });
+
+    test("correct winner - column", () => {
+        const gameSequence = [
+            ["X", 1, 1],
+            ["O", 2, 2],
+            ["X", 0, 1],
+            ["O", 0, 0],
+            ["X", 2, 1]
+        ];
+        expect(solveTicTacToe(gameSequence)).toBe("X");
+    });
+
+    test("correct winner - diagonal", () => {
+        const gameSequence = [
+            ["X", 0, 0],
+            ["O", 1, 2],
+            ["X", 1, 1],
+            ["O", 0, 1],
+            ["X", 2, 2]
+        ];
+        expect(solveTicTacToe(gameSequence)).toBe("X");
+    });
+
+    test("no winner - full board", () => {
+        const gameSequence = [
+            ["X", 1, 1],
+            ["O", 0, 0],
+            ["X", 2, 0],
+            ["O", 2, 1],
+            ["X", 2, 2],
+            ["O", 0, 2],
+            ["X", 0, 1],
+            ["O", 1, 2],
+            ["X", 1, 0]
+        ];
+        expect(solveTicTacToe(gameSequence)).toBe(null);
+    });
 })
