@@ -1,3 +1,5 @@
+const { findWinner } = require("./findWinner");
+
 const solveTicTacToe = (gameSequence) => {
     if (gameSequence === undefined) throw new Error("an argument is required");
     else if (!Array.isArray(gameSequence)) throw new Error("gameSequence must be an Array");
@@ -15,6 +17,16 @@ const solveTicTacToe = (gameSequence) => {
             if (el[0] == gameSequence[index + 1][0]) throw new Error("players must alternate");
         }
     })
+
+    let board = [...Array(3)].map(e => Array(3).fill(null));
+    
+    for (el of gameSequence){
+        if (board[el[1]][el[2]]) throw new Error ("position already occupied");
+        board[el[1]][el[2]] = el[0];
+        let winner = findWinner(board);
+        if (winner) return winner;
+    }
+    return null;
 }
 
 module.exports = { solveTicTacToe }
