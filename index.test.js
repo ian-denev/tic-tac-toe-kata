@@ -1,6 +1,6 @@
 const { solveTicTacToe } = require("./index");
 
-describe("solveTicTacToe testing suite", () => {
+describe("solveTicTacToe input testing suite", () => {
     // Dummy Objects
     const gameSequence = [
         ["X", 1, 1],
@@ -38,7 +38,9 @@ describe("solveTicTacToe testing suite", () => {
     test.each(gameSequenceBadElements)("gameSequence elements follow the correct input format", (badSequence) => {
         expect(() => solveTicTacToe(badSequence.sequence)).toThrow("gameSequence elements must follow the correct format");
     });
+})
 
+describe("solveTicTacToe gameplay testing suite", () => {
     test("players must alternate", () => {
         const nonAlternatingGameSeq = [["X", 1, 1], ["X", 0, 0]];
         expect(() => solveTicTacToe(nonAlternatingGameSeq)).toThrow("players must alternate");
