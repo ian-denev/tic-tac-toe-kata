@@ -8,33 +8,33 @@ describe("findWinner testing suite", () => {
         expect(() => findWinner(33)).toThrowError("board must be an Array");
     });
     test("board must contain 3 rows", () => {
-        let input = [["X", "0", 3], ["X", null, "0"]];
+        let input = [["X", "O", 3], ["X", null, "O"]];
         expect(() => findWinner(input)).toThrowError("board must contain 3 rows");
     });
     test("board rows must contain 3 spaces", () => {
-        let input = [["X", "0", 3], ["X", null, "0"], ["X", null]];
+        let input = [["X", "O", 3], ["X", null, "O"], ["X", null]];
         expect(() => findWinner(input)).toThrowError("board rows must contain 3 spaces");
     });
-    test("board must only contain 'X', '0', or null", () => {
-        let input = [["X", "0", 3], ["X", null, "0"], ["X", null, "0"]];
-        expect(() => findWinner(input)).toThrowError("board can only contain X, 0 or null");
-        input = [["X", "0", "X"], ["X", null, "0"], ["X", null, "0"]];
-        expect(() => findWinner(input)).not.toThrowError("board can only contain X, 0 or null");
+    test("board must only contain 'X', 'O', or null", () => {
+        let input = [["X", "O", 3], ["X", null, "O"], ["X", null, "O"]];
+        expect(() => findWinner(input)).toThrowError("board can only contain X, O or null");
+        input = [["X", "O", "X"], ["X", null, "O"], ["X", null, "O"]];
+        expect(() => findWinner(input)).not.toThrowError("board can only contain X, O or null");
     });
     test("correct output with provided input", () => {
-        let input = [["X", "0", null], ["X", null, "0"], ["X", null, "0"]];
+        let input = [["X", "O", null], ["X", null, "O"], ["X", null, "O"]];
         expect(findWinner(input)).toBe("X");
     });
     test("correct output with modified input", () => {
-        let input = [["0", "0", "0"], ["X", null, "X"], ["X", null, "0"]];
-        expect(findWinner(input)).toBe("0");
-        input = [[null, "0", "X"], ["0", "X", null], ["X", null, null]];
+        let input = [["O", "O", "O"], ["X", null, "X"], ["X", null, "O"]];
+        expect(findWinner(input)).toBe("O");
+        input = [[null, "O", "X"], ["O", "X", null], ["X", null, null]];
         expect(findWinner(input)).toBe("X");
-        input = [["X", null, null], ["0", "0", "0"], ["X", null, null]];
-        expect(findWinner(input)).toBe("0");
+        input = [["X", null, null], ["O", "O", "O"], ["X", null, null]];
+        expect(findWinner(input)).toBe("O");
     });
     test("correct output with no winner ", () => {
-        let input = [["0", "X", "0"], ["X", null, "0"], ["X", null, null]];
+        let input = [["O", "X", "O"], ["X", null, "O"], ["X", null, null]];
         expect(findWinner(input)).toBe(null);
     });
 });
